@@ -1,0 +1,25 @@
+The ``7-base_geometry`` module
+======================
+
+Using ``print_sorted``
+--------------------
+
+Importing the function from the module:
+        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+		>>> bg = BaseGeometry()
+
+Checking with value 0
+		>>> bg.integer_validator("zero", 0)
+		Traceback (most recent call last):
+			...
+		ValueError: zero must be greater than 0
+
+Checking regular case
+		>>> bg.integer_validator("my_int", 12)
+		>>> bg.integer_validator("width", 89)
+
+Checking create bg with parameters
+		>>> bg = BaseGeometry(7, 9)
+		Traceback (most recent call last):
+			...
+		TypeError: __init__() takes 1 positional argument but 3 were given
