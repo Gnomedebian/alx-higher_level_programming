@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 '''lists all states from the database'''
-import MySQLdb
-
 import sys
+import MySQLdb
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host='localhost',
@@ -11,8 +10,7 @@ if __name__ == "__main__":
                         db=sys.argv[3],
                         port=3306)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM hbtn_0e_0_usa"
-                "ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM hbtn_0e_0_usa ORDER BY states.id ASC")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
