@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists State objects, City objects, contained in the database"""
+"""lists all City objects from database"""
 
 
 import sys
@@ -17,9 +17,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    raw = session.query(State).all()
+    raw = session.query(City).all()
     for i in raw:
-        print("{}: {}".format(i.id, i.name))
-        for r in i.cities:
-            print("    {}: {}".format(r.id, r.name))
+        print("{}: {} -> {}".format(i.id, i.name, i.state.name))
     session.close()
