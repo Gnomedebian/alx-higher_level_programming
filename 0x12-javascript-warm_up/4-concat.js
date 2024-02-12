@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const args = process.argv;
 if (args.length < 3) {
   console.log(`${undefined} is ${undefined}`);
