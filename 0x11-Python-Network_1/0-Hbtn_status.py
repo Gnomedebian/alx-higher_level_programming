@@ -1,4 +1,4 @@
-#!/Usr/Bin/Python3
+#!/usr/bin/python3
 """
 Fetche https://alx-intranet.hbtn.io/status
 """
