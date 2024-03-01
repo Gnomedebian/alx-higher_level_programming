@@ -1,11 +1,15 @@
 #!/Usr/Bin/Python3
+"""
+Fetche https://alx-intranet.hbtn.io/status
+"""
 
-"""Fetche https://alx-intranet.hbtn.io/status"""
-import urllib.request
 if __name__ == "__main__":
-    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as res:
+    import urllib.request
+    req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
+    with urllib.request.urlopen("req") as res:
         body = res.read()
-        print("Body response:")
-        print("\t- Type: {}".format(type(body)))
-        print("\t- Content: {}".format(body))
-        print("\t- Utf8 Content: {}".format(body.decode("utf-8")))
+
+    print("Body response:")
+    print("\t- Type: {}".format(body.__class__))
+    print("\t- Content: {}".format(body))
+    print("\t- Utf8 Content: {}".format(body.decode("ascii")))
