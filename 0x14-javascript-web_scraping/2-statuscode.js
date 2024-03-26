@@ -5,7 +5,7 @@ const fileUrl = process.argv[2];
 request.get(fileUrl, (error, response) => {
   if (error) {
     console.log(error);
-    return;
+  } else {
+    console.log('code: ' + response.statusCode);
   }
-  console.log('code: ' + response.statusCode);
 });
