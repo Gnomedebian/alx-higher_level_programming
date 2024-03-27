@@ -2,9 +2,9 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 
-request(apiUrl, (error, response, body) => {
+request(apiUrl, (error, body) => {
   if (error) {
-    console.error('Error:', error);
+    console.error(error);
     return;
   }
   const todos = JSON.parse(body);
